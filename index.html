@@ -15,12 +15,15 @@
         :root {
             --cor-primaria: #0A121C;
             --cor-primaria-2: #192D4A;
-            --cor-primaria-3: #16243D;
             --cor-azul: #3764A5;
             --cor-bege: #BC9D8B;
-            --cor-bege-claro: #DBC6B9;
+            --cor-bege-claro: #F5EFE8;
             --cor-branco: #FFFFFF;
             --cor-texto: #E0E0E4;
+            --cor-texto-escuro: #2D2D2D;
+            --espacamento-xl: 6rem;
+            --espacamento-lg: 4rem;
+            --espacamento-md: 2rem;
         }
 
         body {
@@ -33,7 +36,7 @@
         /* HEADER */
         header {
             background: #000000;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -64,7 +67,7 @@
             color: var(--cor-branco);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
             text-transform: uppercase;
@@ -74,7 +77,7 @@
             color: var(--cor-bege);
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, rgba(10, 18, 28, 0.75) 0%, rgba(25, 45, 74, 0.75) 100%), 
@@ -82,7 +85,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -106,73 +108,73 @@
         .hero-content {
             position: relative;
             z-index: 10;
-            max-width: 1000px;
-            padding: 0 2rem;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            max-width: 650px;
+            text-align: center;
         }
 
         .logo-hero {
             max-width: 550px;
             width: 100%;
             height: auto;
-            margin-bottom: 0;
             filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
         }
 
-        /* SEÇÕES */
+        /* SEÇÕES - ESTRUTURA BASE */
         section {
-            padding: 6rem 2rem;
+            padding: var(--espacamento-xl) 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            margin-bottom: 3.5rem;
-            color: var(--cor-bege);
-            text-align: center;
-            font-weight: 900;
-            letter-spacing: -0.5px;
+        section:nth-child(odd) {
+            background: var(--cor-primaria);
         }
 
-        /* SOBRE */
+        section:nth-child(even) {
+            background: var(--cor-primaria-2);
+        }
+
         #sobre {
-            background: #F5EFE8;
+            background: var(--cor-bege-claro);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: var(--espacamento-lg);
+            color: var(--cor-bege);
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         #sobre .section-title {
             color: var(--cor-primaria);
         }
 
-        .about-content {
+        /* SOBRE */
+        #sobre {
+            padding-top: var(--espacamento-xl);
+            padding-bottom: var(--espacamento-xl);
+        }
+
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: var(--espacamento-lg);
             align-items: start;
         }
 
         .about-text {
             position: relative;
-            padding-bottom: 3rem;
+            padding-bottom: 4rem;
         }
 
         .about-text p {
-            margin-bottom: 1.8rem;
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-md);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--cor-texto-escuro);
             font-weight: 400;
         }
 
@@ -183,28 +185,28 @@
             width: 100%;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: var(--espacamento-md);
         }
 
         .divider-line {
             flex: 1;
-            height: 2px;
+            height: 3px;
             background: var(--cor-bege);
         }
 
         .divider-shape {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border: 3px solid var(--cor-bege);
-            border-radius: 8px;
+            border-radius: 4px;
             flex-shrink: 0;
         }
 
         .about-image {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .about-image img {
@@ -213,285 +215,247 @@
             display: block;
         }
 
-        /* ÚLTIMO EVENTO */
-        .event-card {
+        /* EVENTOS */
+        .events-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(25, 45, 74, 0.5) 0%, rgba(22, 36, 61, 0.5) 100%);
-            padding: 3rem;
-            border-radius: 12px;
+            gap: var(--espacamento-lg);
+            margin-top: var(--espacamento-lg);
+        }
+
+        .event-card {
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(188, 157, 139, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: var(--cor-bege);
+            transform: translateY(-5px);
         }
 
         .event-image {
-            border-radius: 8px;
+            width: 100%;
+            aspect-ratio: 16/9;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .event-image img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: cover;
         }
 
         .event-content {
-            position: relative;
+            padding: var(--espacamento-md);
         }
 
-        .event-shape {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, var(--cor-bege) 0%, var(--cor-bege-claro) 100%);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(188, 157, 139, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .event-shape:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(188, 157, 139, 0.4);
-        }
-
-        .event-shape h3 {
+        .event-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--cor-primaria);
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: var(--cor-bege);
+            margin-bottom: 0.8rem;
             font-weight: 900;
         }
 
-        .event-shape p {
-            color: var(--cor-primaria);
-            font-size: 1rem;
+        .event-text {
+            color: var(--cor-texto-escuro);
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            line-height: 1.7;
         }
 
-        .event-link {
+        .btn-minimal {
             display: inline-block;
-            background: var(--cor-primaria);
+            background: transparent;
             color: var(--cor-bege);
-            padding: 0.8rem 2rem;
+            padding: 0.7rem 1.8rem;
             text-decoration: none;
-            border-radius: 50px;
+            border: 2px solid var(--cor-bege);
+            border-radius: 0;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
-            border: 2px solid var(--cor-primaria);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
-        .event-link:hover {
-            background: transparent;
+        .btn-minimal:hover {
+            background: var(--cor-bege);
             color: var(--cor-primaria);
         }
 
         /* REDES SOCIAIS */
-        .social-section {
+        .social-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 4rem;
+            gap: var(--espacamento-lg);
+            margin-bottom: var(--espacamento-lg);
         }
 
         .social-card {
-            background: linear-gradient(135deg, rgba(25, 45, 74, 0.7) 0%, rgba(22, 36, 61, 0.7) 100%);
-            border-radius: 12px;
-            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(188, 157, 139, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .social-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(188, 157, 139, 0.3);
-        }
-
-        .social-card-header {
-            background: var(--cor-bege);
-            padding: 1.5rem;
+            border-radius: 8px;
+            padding: var(--espacamento-md);
             text-align: center;
-        }
-
-        .social-card-header h3 {
-            color: var(--cor-primaria);
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .social-card-body {
-            padding: 2rem;
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .social-card-body p {
-            color: var(--cor-texto);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .social-link {
-            display: inline-block;
-            background: var(--cor-bege);
-            color: var(--cor-primaria);
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
             transition: all 0.3s ease;
         }
 
-        .social-link:hover {
-            background: var(--cor-bege-claro);
-            transform: translateY(-3px);
+        .social-card:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: var(--cor-bege);
+        }
+
+        .social-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--cor-bege);
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .social-text {
+            color: var(--cor-texto);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
         /* SPOTIFY */
-        .spotify-section {
-            background: linear-gradient(135deg, rgba(25, 45, 74, 0.5) 0%, rgba(22, 36, 61, 0.5) 100%);
-            border-radius: 12px;
-            padding: 3rem;
+        .spotify-container {
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(188, 157, 139, 0.3);
+            border-radius: 8px;
+            padding: var(--espacamento-lg);
             text-align: center;
         }
 
-        .spotify-header {
-            margin-bottom: 2rem;
-        }
-
-        .spotify-header h3 {
-            color: var(--cor-bege);
+        .spotify-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            color: var(--cor-bege);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
         }
 
         .spotify-player {
             display: flex;
             justify-content: center;
-            margin: 2rem 0;
+            margin: var(--espacamento-md) 0;
         }
 
         .spotify-player iframe {
-            border-radius: 12px;
+            border-radius: 8px;
+            max-width: 100%;
         }
 
         /* PATROCÍNIO */
-        .sponsorship-card {
+        .sponsorship-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: var(--espacamento-lg);
             align-items: center;
-            background: linear-gradient(135deg, var(--cor-bege) 0%, var(--cor-bege-claro) 100%);
-            padding: 3.5rem;
-            border-radius: 12px;
+            background: var(--cor-bege);
+            padding: var(--espacamento-lg);
+            border-radius: 8px;
         }
 
         .sponsorship-content h3 {
             color: var(--cor-primaria);
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
             font-weight: 900;
+            line-height: 1.1;
         }
 
         .sponsorship-content p {
             color: var(--cor-primaria);
             font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: 2rem;
-            font-weight: 500;
+            margin-bottom: var(--espacamento-md);
         }
 
-        .sponsorship-link {
+        .btn-sponsor {
             display: inline-block;
             background: var(--cor-primaria);
             color: var(--cor-bege);
             padding: 1rem 2.5rem;
             text-decoration: none;
-            border-radius: 50px;
+            border: 2px solid var(--cor-primaria);
+            border-radius: 0;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .sponsorship-link:hover {
-            background: var(--cor-primaria-2);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        .btn-sponsor:hover {
+            background: transparent;
+            color: var(--cor-primaria);
         }
 
-        .sponsorship-logos {
+        .sponsor-logos {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
 
-        .sponsor-logo {
+        .sponsor-item {
             background: var(--cor-primaria);
-            padding: 2rem;
-            border-radius: 8px;
+            padding: 1.5rem;
+            border-radius: 4px;
             text-align: center;
-            font-weight: 600;
             color: var(--cor-bege);
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
         /* FOOTER */
         footer {
-            background: var(--cor-primaria);
-            border-top: 3px solid var(--cor-bege);
-            padding: 4rem 2rem 2rem;
+            background: #000000;
+            border-top: 2px solid var(--cor-bege);
+            padding: var(--espacamento-lg) 2rem;
+            margin-top: var(--espacamento-xl);
         }
 
-        .footer-content {
+        .footer-grid {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: auto 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
+            gap: var(--espacamento-lg);
+            margin-bottom: var(--espacamento-lg);
             align-items: start;
         }
 
         .footer-logo {
-            height: 80px;
+            height: 70px;
             width: auto;
         }
 
         .footer-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--espacamento-lg);
         }
 
         .footer-section h4 {
             color: var(--cor-bege);
             margin-bottom: 1rem;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .footer-section p {
             color: var(--cor-texto);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.8;
             margin-bottom: 0.5rem;
         }
@@ -508,57 +472,51 @@
 
         .footer-bottom {
             border-top: 1px solid rgba(188, 157, 139, 0.3);
-            padding-top: 2rem;
+            padding-top: var(--espacamento-md);
             text-align: center;
             color: var(--cor-texto);
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom p {
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
         }
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .logo-hero {
-                max-width: 350px;
-            }
-
             .section-title {
                 font-size: 2.2rem;
             }
 
-            .about-content {
+            .about-grid {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+                gap: var(--espacamento-md);
             }
 
-            .event-card {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .social-section {
+            .events-grid {
                 grid-template-columns: 1fr;
             }
 
-            .sponsorship-card {
+            .social-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
-            .footer-content {
+            .sponsorship-box {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-info {
+                grid-template-columns: 1fr;
+                gap: var(--espacamento-md);
             }
 
             .logo-header {
-                height: 50px;
+                height: 45px;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -570,8 +528,8 @@
             <img src="logo-cabecalho.png" alt="Logo OSPB" class="logo-header">
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#imprensa">Imprensa</a></li>
-                <li><a href="#producoes">Produções</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#redes">Redes</a></li>
                 <li><a href="#patrocinio">Patrocínio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -588,7 +546,7 @@
     <!-- SOBRE -->
     <section id="sobre">
         <h2 class="section-title">Sobre a Orquestra</h2>
-        <div class="about-content">
+        <div class="about-grid">
             <div class="about-text">
                 <p>A Orquestra Sanfônica de Pato Branco é um projeto musical composto principalmente por acordeonistas que promove a valorização da música tradicional brasileira, especialmente a música sulamericana.</p>
                 <p>Fundada em 2006, a orquestra reúne músicos de várias idades, oferecendo um espaço para o desenvolvimento de talentos locais e para a preservação do acordeon, instrumento central na cultura musical do sul do Brasil.</p>
@@ -605,17 +563,27 @@
     </section>
 
     <!-- EVENTOS -->
-    <section>
+    <section id="eventos">
         <h2 class="section-title">Eventos</h2>
-        <div class="event-card">
-            <div class="event-image">
-                <img src="sobre.png" alt="Apresentação da Orquestra">
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="sobre.png" alt="Apresentação">
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Festival de Música 2024</h3>
+                    <p class="event-text">Uma noite inesquecível com a melhor música tradicional brasileira em apresentação única.</p>
+                    <a href="#" class="btn-minimal">Saiba Mais</a>
+                </div>
             </div>
-            <div class="event-content">
-                <div class="event-shape">
-                    <h3>Festival de Música 2024</h3>
-                    <p>Uma noite inesquecível com a melhor música tradicional brasileira</p>
-                    <a href="#" class="event-link">Saiba Mais →</a>
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="sobre.png" alt="Apresentação">
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Concerto Especial</h3>
+                    <p class="event-text">Repertório diversificado com clássicos brasileiros e arranjos exclusivos para toda a família.</p>
+                    <a href="#" class="btn-minimal">Saiba Mais</a>
                 </div>
             </div>
         </div>
@@ -624,66 +592,54 @@
     <!-- REDES SOCIAIS -->
     <section id="redes">
         <h2 class="section-title">Redes Sociais</h2>
-        <div class="social-section">
+        <div class="social-grid">
             <div class="social-card">
-                <div class="social-card-header">
-                    <h3>📱 Instagram</h3>
-                </div>
-                <div class="social-card-body">
-                    <p>Acompanhe nossos melhores momentos e novidades</p>
-                    <a href="https://www.instagram.com/orquestrasanfonicapb/" target="_blank" class="social-link">Seguir</a>
-                </div>
+                <h3 class="social-title">📱 Instagram</h3>
+                <p class="social-text">Acompanhe nossos melhores momentos e novidades</p>
+                <a href="https://www.instagram.com/orquestrasanfonicapb/" target="_blank" class="btn-minimal">Seguir</a>
             </div>
-
             <div class="social-card">
-                <div class="social-card-header">
-                    <h3>🎥 YouTube</h3>
-                </div>
-                <div class="social-card-body">
-                    <p>Assista nossos vídeos e apresentações</p>
-                    <a href="https://www.youtube.com/@orquestrasanfonica3236" target="_blank" class="social-link">Inscrever-se</a>
-                </div>
+                <h3 class="social-title">🎥 YouTube</h3>
+                <p class="social-text">Assista nossos vídeos e apresentações completas</p>
+                <a href="https://www.youtube.com/@orquestrasanfonica3236" target="_blank" class="btn-minimal">Inscrever-se</a>
             </div>
         </div>
 
-        <div class="spotify-section">
-            <div class="spotify-header">
-                <h3>🎵 Nosso Último Álbum</h3>
-                <p>Ouça agora no Spotify</p>
-            </div>
+        <div class="spotify-container">
+            <h3 class="spotify-title">🎵 Nosso Último Álbum</h3>
+            <p class="social-text">Ouça agora no Spotify</p>
             <div class="spotify-player">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/217z1iahZaFjd3gYnHTLUh?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:8px" src="https://open.spotify.com/embed/album/217z1iahZaFjd3gYnHTLUh?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
-            <a href="https://open.spotify.com/intl-pt/artist/4FO1il1njUkN1WcUhMZ1cO" target="_blank" class="social-link">Ver Todos os Álbuns →</a>
         </div>
     </section>
 
     <!-- PATROCÍNIO -->
     <section id="patrocinio">
         <h2 class="section-title">Patrocínio</h2>
-        <div class="sponsorship-card">
+        <div class="sponsorship-box">
             <div class="sponsorship-content">
                 <h3>Seja um Patrocinador</h3>
-                <p>Sua contribuição ajuda a manter viva a tradição da música brasileira e apoiar novos talentos. Juntos, podemos levar a cultura a mais pessoas.</p>
-                <a href="#" class="sponsorship-link">Conhecer Oportunidades</a>
+                <p>Sua contribuição ajuda a manter viva a tradição da música brasileira e apoiar novos talentos.</p>
+                <a href="#" class="btn-sponsor">Conhecer Oportunidades</a>
             </div>
-            <div class="sponsorship-logos">
-                <div class="sponsor-logo">Empresa Patrocinadora 1</div>
-                <div class="sponsor-logo">Empresa Patrocinadora 2</div>
-                <div class="sponsor-logo">Empresa Patrocinadora 3</div>
+            <div class="sponsor-logos">
+                <div class="sponsor-item">Patrocinador 1</div>
+                <div class="sponsor-item">Patrocinador 2</div>
+                <div class="sponsor-item">Patrocinador 3</div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
+    <footer id="contato">
+        <div class="footer-grid">
             <img src="logo-cabecalho.png" alt="Logo OSPB" class="footer-logo">
             <div class="footer-info">
                 <div class="footer-section">
                     <h4>Contato</h4>
-                    <p>Email: <a href="mailto:contato@ospb.com.br">contato@ospb.com.br</a></p>
-                    <p>Telefone: <a href="tel:+554699829264">(46) 99982-9264</a></p>
+                    <p><a href="mailto:contato@ospb.com.br">contato@ospb.com.br</a></p>
+                    <p><a href="tel:+554699829264">(46) 99982-9264</a></p>
                 </div>
                 <div class="footer-section">
                     <h4>Localização</h4>
