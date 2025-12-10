@@ -157,92 +157,92 @@
         }
 
         .transition-lines {
-            width: 100%;
-            height: 120px;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            height: 100%;
             background: repeating-linear-gradient(
                 90deg,
                 var(--azul-escuro) 0px,
-                var(--azul-escuro) 3px,
-                transparent 3px,
-                transparent 25px
+                var(--azul-escuro) 2px,
+                transparent 2px,
+                transparent 20px
             );
-            opacity: 0.3;
-            animation: slideDown 2s ease-out forwards;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 0.3;
-            }
+            opacity: 0.15;
+            position: absolute;
+            top: 0;
+            z-index: 0;
         }
 
         .about-main {
-            padding: 3rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content-box {
+            background: rgba(245, 245, 245, 0.9);
+            padding: 3rem;
+            border-radius: 8px;
         }
 
         .about-title {
             font-family: 'Metropolis', 'Montserrat', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--cinza-dark);
-            font-weight: 500;
-            letter-spacing: 1px;
-            margin-bottom: 2.5rem;
-            text-transform: lowercase;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .about-text {
-            position: relative;
-            padding-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
         .about-text p {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: var(--cinza-dark);
+        }
+
+        .about-text p:last-of-type {
+            margin-bottom: 2rem;
+        }
+
+        .about-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .about-link a {
+            color: var(--cinza-dark);
+            text-decoration: none;
             font-size: 0.95rem;
-            line-height: 1.5;
-            color: var(--cinza);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--cinza-dark);
+            transition: all 0.3s;
+            padding-bottom: 4px;
+            display: inline-block;
+            text-transform: uppercase;
         }
 
-        .about-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .divider-line {
-            flex: 1;
-            height: 2px;
-            background: var(--azul);
-        }
-
-        .divider-shape {
-            width: 80px;
-            height: 80px;
-            border: 3px solid var(--bege);
-            border-radius: 2px;
+        .about-link a:hover {
+            color: var(--azul);
+            border-bottom-color: var(--azul);
         }
 
         .about-image {
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         }
 
         .about-image img {
@@ -619,20 +619,18 @@
     <section id="sobre">
         <div class="transition-lines"></div>
         <div class="about-main">
-            <h2 class="about-title">Ponte sonora que une gerações</h2>
-            <div class="about-grid">
+            <div class="about-content-box">
+                <h2 class="about-title">Ponte Sonora Que Une Gerações</h2>
                 <div class="about-text">
                     <p>A Orquestra Sanfônica de Pato Branco é um projeto musical composto principalmente por acordeonistas que promove a valorização da música tradicional brasileira, especialmente a música sulamericana.</p>
                     <p>Fundada em 2006, a orquestra reúne músicos de várias idades, oferecendo um espaço para o desenvolvimento de talentos locais e para a preservação do acordeon, instrumento central na cultura musical do sul do Brasil.</p>
-                    <p>Com um repertório diversificado incluindo músicas contemporâneas, tango, samba, choro e adaptações de músicas populares e clássicas, a OSPB participa de festivais e eventos culturais pelo Brasil.</p>
-                    <div class="about-divider">
-                        <div class="divider-line"></div>
-                        <div class="divider-shape"></div>
-                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="sobre.jpg" alt="Orquestra Sanfônica de Pato Branco">
+                <div class="about-link">
+                    <a href="/sobre.html">Saiba Mais Sobre a OSPB</a>
                 </div>
+            </div>
+            <div class="about-image">
+                <img src="sobre.jpg" alt="Orquestra Sanfônica de Pato Branco">
             </div>
         </div>
     </section>
