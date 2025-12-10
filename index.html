@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orquestra Sanfônica de Pato Branco - OSPB</title>
+    <title>Orquestra Sanfônica de Pato Branco</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -13,34 +13,31 @@
         }
 
         :root {
-            --cor-primaria: #0A121C;
-            --cor-primaria-2: #192D4A;
-            --cor-azul: #3764A5;
-            --cor-bege: #BC9D8B;
-            --cor-bege-claro: #F5EFE8;
-            --cor-branco: #FFFFFF;
-            --cor-texto: #E0E0E4;
-            --cor-texto-escuro: #2D2D2D;
-            --espacamento-xl: 6rem;
-            --espacamento-lg: 4rem;
-            --espacamento-md: 2rem;
+            --preto: #000000;
+            --cinza-dark: #1a1a1a;
+            --cinza: #666666;
+            --cinza-claro: #f5f5f5;
+            --branco: #ffffff;
+            --azul: #3764A5;
+            --bege: #BC9D8B;
+            --bege-claro: #F5EFE8;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            color: var(--cor-texto);
-            background-color: var(--cor-primaria);
+            background: var(--branco);
+            color: var(--cinza-dark);
             line-height: 1.6;
         }
 
         /* HEADER */
         header {
-            background: #000000;
-            padding: 1.2rem 0;
+            background: var(--preto);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav {
@@ -59,28 +56,28 @@
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--cor-branco);
+            color: var(--branco);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
             text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            color: var(--cor-bege);
+            color: var(--bege);
         }
 
         /* HERO */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(10, 18, 28, 0.75) 0%, rgba(25, 45, 74, 0.75) 100%), 
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(55, 100, 165, 0.65) 100%), 
                         url('foto-fundo-ospb.jpg') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
@@ -94,21 +91,20 @@
             position: absolute;
             width: 700px;
             height: 700px;
-            background: radial-gradient(circle, rgba(25, 45, 74, 0.4) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(188, 157, 139, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             z-index: 5;
             animation: float 10s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(50px) rotate(5deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(40px); }
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
-            max-width: 650px;
             text-align: center;
         }
 
@@ -116,66 +112,48 @@
             max-width: 550px;
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
         }
 
-        /* SEÇÕES - ESTRUTURA BASE */
+        /* SEÇÕES */
         section {
-            padding: var(--espacamento-xl) 2rem;
+            padding: 5rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        section:nth-child(odd) {
-            background: var(--cor-primaria);
-        }
-
-        section:nth-child(even) {
-            background: var(--cor-primaria-2);
-        }
-
+        /* SOBRE */
         #sobre {
-            background: var(--cor-bege-claro);
+            background: var(--bege-claro);
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: var(--espacamento-lg);
-            color: var(--cor-bege);
+            font-size: 2.8rem;
+            color: var(--preto);
             font-weight: 900;
             letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        #sobre .section-title {
-            color: var(--cor-primaria);
-        }
-
-        /* SOBRE */
-        #sobre {
-            padding-top: var(--espacamento-xl);
-            padding-bottom: var(--espacamento-xl);
+            margin-bottom: 3rem;
+            text-align: left;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--espacamento-lg);
+            gap: 4rem;
             align-items: start;
         }
 
         .about-text {
             position: relative;
-            padding-bottom: 4rem;
+            padding-bottom: 3rem;
         }
 
         .about-text p {
-            margin-bottom: var(--espacamento-md);
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--cor-texto-escuro);
-            font-weight: 400;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--cinza-dark);
         }
 
         .about-divider {
@@ -185,28 +163,26 @@
             width: 100%;
             display: flex;
             align-items: center;
-            gap: var(--espacamento-md);
+            gap: 1.5rem;
         }
 
         .divider-line {
             flex: 1;
             height: 3px;
-            background: var(--cor-bege);
+            background: var(--azul);
         }
 
         .divider-shape {
             width: 100px;
             height: 100px;
-            border: 3px solid var(--cor-bege);
-            border-radius: 4px;
-            flex-shrink: 0;
+            border: 3px solid var(--bege);
+            border-radius: 2px;
         }
 
         .about-image {
-            width: 100%;
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .about-image img {
@@ -216,31 +192,35 @@
         }
 
         /* EVENTOS */
+        #eventos {
+            background: var(--cinza-claro);
+        }
+
         .events-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--espacamento-lg);
-            margin-top: var(--espacamento-lg);
+            gap: 2rem;
         }
 
         .event-card {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(188, 157, 139, 0.3);
-            border-radius: 8px;
+            background: var(--branco);
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .event-card:hover {
-            background: rgba(0, 0, 0, 0.5);
-            border-color: var(--cor-bege);
-            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px);
         }
 
         .event-image {
             width: 100%;
             aspect-ratio: 16/9;
             overflow: hidden;
+            background: var(--cinza-claro);
         }
 
         .event-image img {
@@ -250,177 +230,219 @@
         }
 
         .event-content {
-            padding: var(--espacamento-md);
+            padding: 2rem;
         }
 
         .event-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--cor-bege);
+            font-size: 1.6rem;
+            color: var(--azul);
             margin-bottom: 0.8rem;
             font-weight: 900;
         }
 
         .event-text {
-            color: var(--cor-texto-escuro);
+            color: var(--cinza);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        .btn-minimal {
+        .btn-link {
             display: inline-block;
-            background: transparent;
-            color: var(--cor-bege);
-            padding: 0.7rem 1.8rem;
+            color: var(--azul);
             text-decoration: none;
-            border: 2px solid var(--cor-bege);
-            border-radius: 0;
             font-weight: 700;
             font-size: 0.85rem;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--azul);
+            padding-bottom: 2px;
+        }
+
+        .btn-link:hover {
+            color: var(--bege);
+            border-bottom-color: var(--bege);
+        }
+
+        /* REDES SOCIAIS */
+        #redes {
+            background: var(--branco);
+        }
+
+        .redes-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .insta-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-social {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            background: var(--cinza-claro);
+            color: var(--cinza-dark);
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
 
-        .btn-minimal:hover {
-            background: var(--cor-bege);
-            color: var(--cor-primaria);
+        .btn-social:hover {
+            background: var(--azul);
+            color: var(--branco);
+            border-color: var(--azul);
         }
 
-        /* REDES SOCIAIS */
-        .social-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--espacamento-lg);
-            margin-bottom: var(--espacamento-lg);
+        .yt-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .social-card {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(188, 157, 139, 0.3);
-            border-radius: 8px;
-            padding: var(--espacamento-md);
-            text-align: center;
-            transition: all 0.3s ease;
+        .youtube-player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .social-card:hover {
-            background: rgba(0, 0, 0, 0.5);
-            border-color: var(--cor-bege);
-        }
-
-        .social-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--cor-bege);
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
-
-        .social-text {
-            color: var(--cor-texto);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+        .youtube-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* SPOTIFY */
-        .spotify-container {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(188, 157, 139, 0.3);
-            border-radius: 8px;
-            padding: var(--espacamento-lg);
-            text-align: center;
+        #spotify {
+            background: var(--cinza-claro);
         }
 
-        .spotify-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--cor-bege);
-            margin-bottom: 1.5rem;
-            font-weight: 900;
+        .spotify-container {
+            text-align: center;
         }
 
         .spotify-player {
             display: flex;
             justify-content: center;
-            margin: var(--espacamento-md) 0;
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .spotify-player iframe {
             border-radius: 8px;
-            max-width: 100%;
+        }
+
+        .spotify-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: var(--azul);
+            color: var(--branco);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .spotify-link:hover {
+            background: var(--bege);
+            color: var(--preto);
         }
 
         /* PATROCÍNIO */
+        #patrocinio {
+            background: var(--branco);
+        }
+
         .sponsorship-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--espacamento-lg);
+            gap: 3rem;
             align-items: center;
-            background: var(--cor-bege);
-            padding: var(--espacamento-lg);
-            border-radius: 8px;
+            background: var(--bege);
+            padding: 3rem;
+            border-radius: 6px;
         }
 
         .sponsorship-content h3 {
-            color: var(--cor-primaria);
+            color: var(--preto);
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1.5rem;
             font-weight: 900;
             line-height: 1.1;
         }
 
         .sponsorship-content p {
-            color: var(--cor-primaria);
+            color: var(--cinza-dark);
             font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: var(--espacamento-md);
+            margin-bottom: 1.5rem;
         }
 
         .btn-sponsor {
             display: inline-block;
-            background: var(--cor-primaria);
-            color: var(--cor-bege);
-            padding: 1rem 2.5rem;
+            background: var(--preto);
+            color: var(--bege);
+            padding: 0.9rem 2.5rem;
             text-decoration: none;
-            border: 2px solid var(--cor-primaria);
-            border-radius: 0;
+            border-radius: 4px;
             font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .btn-sponsor:hover {
-            background: transparent;
-            color: var(--cor-primaria);
+            background: var(--azul);
+            color: var(--branco);
         }
 
         .sponsor-logos {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .sponsor-item {
-            background: var(--cor-primaria);
-            padding: 1.5rem;
+            background: var(--preto);
+            padding: 1.2rem;
             border-radius: 4px;
             text-align: center;
-            color: var(--cor-bege);
+            color: var(--bege);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* FOOTER */
         footer {
-            background: #000000;
-            border-top: 2px solid var(--cor-bege);
-            padding: var(--espacamento-lg) 2rem;
-            margin-top: var(--espacamento-xl);
+            background: var(--preto);
+            border-top: 2px solid var(--bege);
+            padding: 3rem 2rem;
         }
 
         .footer-grid {
@@ -428,76 +450,67 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: auto 1fr;
-            gap: var(--espacamento-lg);
-            margin-bottom: var(--espacamento-lg);
+            gap: 3rem;
+            margin-bottom: 2rem;
             align-items: start;
         }
 
         .footer-logo {
-            height: 70px;
+            height: 60px;
             width: auto;
         }
 
         .footer-info {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--espacamento-lg);
+            gap: 3rem;
         }
 
         .footer-section h4 {
-            color: var(--cor-bege);
+            color: var(--bege);
             margin-bottom: 1rem;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .footer-section p {
-            color: var(--cor-texto);
+            color: var(--cinza);
             font-size: 0.9rem;
             line-height: 1.8;
             margin-bottom: 0.5rem;
         }
 
         .footer-section a {
-            color: var(--cor-bege);
+            color: var(--bege);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .footer-section a:hover {
-            color: var(--cor-bege-claro);
+            color: var(--branco);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(188, 157, 139, 0.3);
-            padding-top: var(--espacamento-md);
+            border-top: 1px solid rgba(188, 157, 139, 0.2);
+            padding-top: 2rem;
             text-align: center;
-            color: var(--cor-texto);
+            color: var(--cinza);
             font-size: 0.85rem;
         }
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
-            .about-grid {
+            .about-grid, .redes-container, .sponsorship-box {
                 grid-template-columns: 1fr;
-                gap: var(--espacamento-md);
             }
 
             .events-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sponsorship-box {
                 grid-template-columns: 1fr;
             }
 
@@ -507,16 +520,15 @@
 
             .footer-info {
                 grid-template-columns: 1fr;
-                gap: var(--espacamento-md);
-            }
-
-            .logo-header {
-                height: 45px;
             }
 
             .nav-links {
                 gap: 1.5rem;
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+            }
+
+            .logo-header {
+                height: 40px;
             }
         }
     </style>
@@ -545,7 +557,7 @@
 
     <!-- SOBRE -->
     <section id="sobre">
-        <h2 class="section-title">Sobre a Orquestra</h2>
+        <h2 class="section-title">Sobre</h2>
         <div class="about-grid">
             <div class="about-text">
                 <p>A Orquestra Sanfônica de Pato Branco é um projeto musical composto principalmente por acordeonistas que promove a valorização da música tradicional brasileira, especialmente a música sulamericana.</p>
@@ -557,7 +569,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="sobre.png" alt="Orquestra Sanfônica de Pato Branco">
+                <img src="sobre.jpg" alt="Orquestra Sanfônica de Pato Branco">
             </div>
         </div>
     </section>
@@ -568,22 +580,22 @@
         <div class="events-grid">
             <div class="event-card">
                 <div class="event-image">
-                    <img src="sobre.png" alt="Apresentação">
+                    <img src="sobre.jpg" alt="Apresentação">
                 </div>
                 <div class="event-content">
-                    <h3 class="event-title">Festival de Música 2024</h3>
-                    <p class="event-text">Uma noite inesquecível com a melhor música tradicional brasileira em apresentação única.</p>
-                    <a href="#" class="btn-minimal">Saiba Mais</a>
+                    <h3 class="event-title">Festival 2024</h3>
+                    <p class="event-text">Uma noite inesquecível com a melhor música tradicional brasileira.</p>
+                    <a href="#" class="btn-link">Saiba Mais →</a>
                 </div>
             </div>
             <div class="event-card">
                 <div class="event-image">
-                    <img src="sobre.png" alt="Apresentação">
+                    <img src="sobre.jpg" alt="Apresentação">
                 </div>
                 <div class="event-content">
                     <h3 class="event-title">Concerto Especial</h3>
-                    <p class="event-text">Repertório diversificado com clássicos brasileiros e arranjos exclusivos para toda a família.</p>
-                    <a href="#" class="btn-minimal">Saiba Mais</a>
+                    <p class="event-text">Repertório diversificado para toda a família com clássicos brasileiros.</p>
+                    <a href="#" class="btn-link">Saiba Mais →</a>
                 </div>
             </div>
         </div>
@@ -592,25 +604,35 @@
     <!-- REDES SOCIAIS -->
     <section id="redes">
         <h2 class="section-title">Redes Sociais</h2>
-        <div class="social-grid">
-            <div class="social-card">
-                <h3 class="social-title">📱 Instagram</h3>
-                <p class="social-text">Acompanhe nossos melhores momentos e novidades</p>
-                <a href="https://www.instagram.com/orquestrasanfonicapb/" target="_blank" class="btn-minimal">Seguir</a>
+        <div class="redes-container">
+            <div class="insta-section">
+                <div style="overflow: hidden; border-radius: 6px;">
+                    <iframe src="https://www.instagram.com/orquestrasanfonicapb/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/orquestrasanfonicapb/" target="_blank" class="btn-social">Seguir</a>
+                </div>
             </div>
-            <div class="social-card">
-                <h3 class="social-title">🎥 YouTube</h3>
-                <p class="social-text">Assista nossos vídeos e apresentações completas</p>
-                <a href="https://www.youtube.com/@orquestrasanfonica3236" target="_blank" class="btn-minimal">Inscrever-se</a>
+
+            <div class="yt-section">
+                <div class="youtube-player">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://www.youtube.com/@orquestrasanfonica3236" target="_blank" class="btn-social">Inscrever-se</a>
+                </div>
             </div>
         </div>
+    </section>
 
+    <!-- SPOTIFY -->
+    <section id="spotify">
+        <h2 class="section-title">Ouça Agora</h2>
         <div class="spotify-container">
-            <h3 class="spotify-title">🎵 Nosso Último Álbum</h3>
-            <p class="social-text">Ouça agora no Spotify</p>
             <div class="spotify-player">
-                <iframe style="border-radius:8px" src="https://open.spotify.com/embed/album/217z1iahZaFjd3gYnHTLUh?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/217z1iahZaFjd3gYnHTLUh?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
+            <a href="https://open.spotify.com/intl-pt/artist/4FO1il1njUkN1WcUhMZ1cO" target="_blank" class="spotify-link">Ver Todos os Álbuns</a>
         </div>
     </section>
 
