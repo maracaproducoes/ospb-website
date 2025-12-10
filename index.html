@@ -371,52 +371,58 @@
         /* REDES SOCIAIS */
         #redes {
             background: var(--branco);
+            padding: 3rem 2rem;
+        }
+
+        #redes .section-title {
+            display: block;
+            font-family: 'Metropolis', sans-serif;
+            font-size: 1.4rem;
+            color: #0A121C;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-align: left;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-transform: uppercase;
         }
 
         .redes-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
             align-items: start;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .insta-section {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 0;
+        }
+
+        .insta-section > div:first-child {
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .insta-section iframe {
+            display: block;
+            width: 100%;
+            height: 600px;
         }
 
         .social-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn-social {
-            flex: 1;
-            padding: 0.8rem 1.5rem;
-            background: var(--cinza-claro);
-            color: var(--cinza-dark);
-            text-decoration: none;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-align: center;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-social:hover {
-            background: var(--azul);
-            color: var(--branco);
-            border-color: var(--azul);
+            display: none;
         }
 
         .yt-section {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 0;
         }
 
         .youtube-player {
@@ -424,7 +430,6 @@
             aspect-ratio: 16/9;
             border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .youtube-player iframe {
@@ -714,23 +719,17 @@
 
     <!-- REDES SOCIAIS -->
     <section id="redes">
-        <h2 class="section-title">Redes Sociais</h2>
+        <h2 class="section-title">Acompanhe a OSPB</h2>
         <div class="redes-container">
             <div class="insta-section">
                 <div style="overflow: hidden; border-radius: 6px;">
                     <iframe src="https://www.instagram.com/orquestrasanfonicapb/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-                <div class="social-buttons">
-                    <a href="https://www.instagram.com/orquestrasanfonicapb/" target="_blank" class="btn-social">Seguir</a>
-                </div>
             </div>
 
             <div class="yt-section">
                 <div class="youtube-player">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="social-buttons">
-                    <a href="https://www.youtube.com/@orquestrasanfonica3236" target="_blank" class="btn-social">Inscrever-se</a>
+                    <iframe src="https://www.youtube.com/embed/VVKEdO9_Bes?start=14" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
