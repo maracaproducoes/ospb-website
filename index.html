@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orquestra Sanfônica de Pato Branco</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,33 +13,36 @@
         }
 
         :root {
-            --primary-dark: #0A121C;
-            --primary-medium: #192D4A;
-            --accent-beige: #BC9D8B;
-            --accent-light: #DBC6B9;
-            --text-white: #FFFFFF;
-            --text-light: #E0E0E4;
+            /* CORES DO MANUAL */
+            --cor-primaria: #0A121C;
+            --cor-primaria-2: #192D4A;
+            --cor-primaria-3: #16243D;
+            --cor-azul: #3764A5;
+            --cor-bege: #BC9D8B;
+            --cor-bege-claro: #DBC6B9;
+            --cor-branco: #FFFFFF;
+            --cor-texto: #E0E0E4;
         }
 
         body {
-            font-family: 'Lora', serif;
-            color: var(--text-white);
-            background-color: var(--primary-dark);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--cor-texto);
+            background-color: var(--cor-primaria);
             line-height: 1.6;
         }
 
-        /* HEADER/NAV */
+        /* HEADER */
         header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
-            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-2) 100%);
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -47,35 +50,36 @@
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-beige);
-            text-decoration: none;
+        .logo-header {
+            height: 70px;
+            width: auto;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--cor-branco);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
             transition: color 0.3s ease;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            color: var(--accent-beige);
+            color: var(--cor-bege);
         }
 
         /* HERO SECTION */
         .hero {
-            min-height: 90vh;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 18, 28, 0.85) 0%, rgba(25, 45, 74, 0.85) 100%), 
+                        url('foto-fundo-ospb.jpg') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -87,47 +91,32 @@
         .hero::before {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(188, 157, 139, 0.1) 0%, transparent 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(55, 100, 165, 0.1) 0%, transparent 70%);
             border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            animation: float 6s ease-in-out infinite;
+            top: -200px;
+            right: -200px;
+            animation: float 10s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(50px) rotate(5deg); }
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
-            max-width: 900px;
+            max-width: 1000px;
             padding: 0 2rem;
+            animation: fadeInUp 1.2s ease-out;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            letter-spacing: -2px;
-        }
-
-        .symbol {
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-size: 3rem;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        @keyframes fadeInDown {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -135,189 +124,294 @@
             }
         }
 
+        .logo-hero {
+            max-width: 550px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 3rem;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            color: var(--cor-branco);
+        }
+
         .hero p {
             font-size: 1.3rem;
-            color: var(--accent-light);
-            margin-bottom: 2rem;
-            font-style: italic;
+            color: var(--cor-bege-claro);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--accent-beige);
-            color: var(--primary-dark);
-            padding: 1.2rem 3rem;
+            background: var(--cor-bege);
+            color: var(--cor-primaria);
+            padding: 1.3rem 4rem;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(188, 157, 139, 0.3);
+            box-shadow: 0 12px 35px rgba(188, 157, 139, 0.5);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
         .cta-button:hover {
-            background: var(--accent-light);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(188, 157, 139, 0.4);
+            background: var(--cor-bege-claro);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 45px rgba(188, 157, 139, 0.6);
         }
 
-        /* SECTIONS */
+        /* SEÇÕES */
         section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
+            padding: 6rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--accent-beige);
+            font-size: 3.2rem;
+            margin-bottom: 3.5rem;
+            color: var(--cor-bege);
             text-align: center;
+            font-weight: 900;
+            letter-spacing: -0.5px;
         }
 
-        /* ABOUT */
+        /* SOBRE */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            gap: 4rem;
+            align-items: start;
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--cor-texto);
+            font-weight: 400;
         }
 
-        /* HIGHLIGHTS */
+        /* CARDS */
         .highlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
         }
 
         .highlight-card {
-            background: rgba(25, 45, 74, 0.6);
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-beige);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(25, 45, 74, 0.7) 0%, rgba(22, 36, 61, 0.7) 100%);
+            padding: 2.8rem;
+            border-radius: 8px;
+            border-left: 6px solid var(--cor-bege);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(188, 157, 139, 0.25);
         }
 
         .highlight-card:hover {
-            transform: translateY(-10px);
-            background: rgba(25, 45, 74, 0.9);
-            box-shadow: 0 15px 35px rgba(188, 157, 139, 0.2);
+            transform: translateY(-15px);
+            background: linear-gradient(135deg, rgba(25, 45, 74, 0.9) 0%, rgba(22, 36, 61, 0.9) 100%);
+            box-shadow: 0 25px 50px rgba(188, 157, 139, 0.3);
+            border-left-color: var(--cor-bege-claro);
         }
 
         .highlight-card h3 {
-            color: var(--accent-beige);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            color: var(--cor-bege);
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
         }
 
         .highlight-card p {
-            color: var(--text-light);
-            line-height: 1.7;
+            color: var(--cor-texto);
+            line-height: 1.75;
+            font-size: 1rem;
+            font-weight: 400;
         }
 
-        /* GALLERY */
+        /* GALERIA */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .gallery-item {
             aspect-ratio: 4/3;
-            background: linear-gradient(135deg, var(--primary-medium), var(--accent-beige));
-            border-radius: 10px;
+            background: linear-gradient(135deg, var(--cor-primaria-2) 0%, var(--cor-azul) 100%);
+            border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: all 0.4s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.5);
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(188, 157, 139, 0.2);
+            position: relative;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(188, 157, 139, 0);
+            transition: background 0.4s ease;
+            z-index: 1;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
+            box-shadow: 0 20px 50px rgba(188, 157, 139, 0.35);
         }
 
-        /* CONTACT */
+        .gallery-item:hover::before {
+            background: rgba(188, 157, 139, 0.1);
+        }
+
+        /* CONTATO */
         .contact-section {
-            background: linear-gradient(135deg, var(--primary-medium) 0%, rgba(25, 45, 74, 0.8) 100%);
-            border-radius: 15px;
-            padding: 3rem;
+            background: linear-gradient(135deg, var(--cor-primaria-2) 0%, var(--cor-primaria-3) 100%);
+            border-radius: 12px;
+            padding: 4.5rem;
             text-align: center;
+            border: 2px solid rgba(188, 157, 139, 0.3);
         }
 
         .contact-section h2 {
-            color: var(--accent-beige);
-            margin-bottom: 2rem;
+            color: var(--cor-bege);
+            margin-bottom: 3.5rem;
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            letter-spacing: -0.5px;
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
         }
 
         .contact-item {
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
+            padding: 2.2rem;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 8px;
+            border: 1px solid rgba(188, 157, 139, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 0, 0, 0.55);
+            border-color: var(--cor-bege);
+            transform: translateY(-8px);
         }
 
         .contact-item p {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
+            color: var(--cor-texto);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
         }
 
         .contact-item a {
-            color: var(--accent-beige);
+            color: var(--cor-bege);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            letter-spacing: 0.2px;
         }
 
         .contact-item a:hover {
-            color: var(--accent-light);
+            color: var(--cor-bege-claro);
         }
 
         /* FOOTER */
         footer {
-            background: var(--primary-dark);
-            border-top: 1px solid var(--accent-beige);
-            padding: 2rem;
+            background: var(--cor-primaria);
+            border-top: 3px solid var(--cor-bege);
+            padding: 3.5rem 2rem;
             text-align: center;
-            color: var(--text-light);
+            color: var(--cor-texto);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        footer p:first-child {
+            color: var(--cor-bege);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
             }
 
             .nav-links {
-                gap: 1rem;
+                gap: 1.5rem;
+                font-size: 0.9rem;
             }
 
-            .symbol {
-                font-size: 2rem;
+            .logo-hero {
+                max-width: 350px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .logo-header {
+                height: 50px;
+            }
+
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -326,7 +420,7 @@
     <!-- HEADER -->
     <header>
         <nav>
-            <a href="#" class="logo">🎼 OSPB</a>
+            <img src="logo-cabeçalho.png" alt="Logo OSPB" class="logo-header">
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#galeria">Galeria</a></li>
@@ -338,9 +432,9 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="symbol">🎺 🎵 🎺</div>
-            <h1>Orquestra Sanfônica<br>de Pato Branco</h1>
-            <p>Levando a música e cultura à comunidade desde sua fundação</p>
+            <img src="logo-ospb.png" alt="Logo Orquestra Sanfônica de Pato Branco" class="logo-hero">
+            <h1>Orquestra Sanfônica de Pato Branco</h1>
+            <p>Levando a música e cultura à comunidade desde 2006</p>
             <a href="#contato" class="cta-button">Entre em Contato</a>
         </div>
     </section>
@@ -354,24 +448,22 @@
                 <p>Fundada em 2006, a orquestra reúne músicos de várias idades, oferecendo um espaço para o desenvolvimento de talentos locais e para a preservação do acordeon, instrumento central na cultura musical do sul do Brasil.</p>
                 <p>Com um repertório diversificado incluindo músicas contemporâneas, tango, samba, choro e adaptações de músicas populares e clássicas, a OSPB participa de festivais e eventos culturais pelo Brasil.</p>
             </div>
-            <div>
-                <div class="highlights">
-                    <div class="highlight-card">
-                        <h3>🎼 Formação Musical</h3>
-                        <p>Desenvolvimento de talentos musicais locais com foco em acordeon e arranjos para orquestra</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>🎭 Apresentações</h3>
-                        <p>Participação em festivais e eventos culturais regionais e nacionais</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>🌟 Comunidade</h3>
-                        <p>Espaço de encontro e preservação da tradição musical brasileira</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>🎵 Excelência</h3>
-                        <p>Compromisso com a qualidade artística e expressão musical autêntica</p>
-                    </div>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <h3>Formação Musical</h3>
+                    <p>Desenvolvimento de talentos musicais locais com foco em acordeon e arranjos para orquestra</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Apresentações</h3>
+                    <p>Participação em festivais e eventos culturais regionais e nacionais</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Comunidade</h3>
+                    <p>Espaço de encontro e preservação da tradição musical brasileira</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Excelência</h3>
+                    <p>Compromisso com a qualidade artística e expressão musical autêntica</p>
                 </div>
             </div>
         </div>
@@ -397,16 +489,16 @@
             <h2>Queremos ouvir você!</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <p><strong>📧 Email</strong></p>
+                    <p>📧 Email</p>
                     <a href="mailto:contato@ospb.com.br">contato@ospb.com.br</a>
                 </div>
                 <div class="contact-item">
-                    <p><strong>📱 Telefone</strong></p>
+                    <p>📱 Telefone</p>
                     <a href="tel:+554699829264">(46) 99982-9264</a>
                 </div>
                 <div class="contact-item">
-                    <p><strong>📍 Localização</strong></p>
-                    <p>Pato Branco, Paraná - Brasil</p>
+                    <p>📍 Localização</p>
+                    <p style="color: var(--cor-texto); font-weight: 400; margin: 0;">Pato Branco, Paraná<br>Brasil</p>
                 </div>
             </div>
         </div>
@@ -414,7 +506,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Orquestra Sanfônica de Pato Branco. Todos os direitos reservados.</p>
+        <p>Orquestra Sanfônica de Pato Branco</p>
         <p>Levando a música e cultura à comunidade desde 2006</p>
     </footer>
 </body>
