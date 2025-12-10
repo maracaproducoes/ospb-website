@@ -78,7 +78,7 @@
         /* HERO SECTION */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(10, 18, 28, 0.95) 0%, rgba(25, 45, 74, 0.95) 100%), 
+            background: linear-gradient(135deg, rgba(10, 18, 28, 0.75) 0%, rgba(25, 45, 74, 0.75) 100%), 
                         url('foto-fundo-ospb.jpg') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
@@ -88,15 +88,14 @@
             overflow: hidden;
         }
 
-        .hero::before {
+        .hero::after {
             content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(55, 100, 165, 0.1) 0%, transparent 70%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(25, 45, 74, 0.4) 0%, transparent 70%);
             border-radius: 50%;
-            top: -200px;
-            right: -200px;
+            z-index: 5;
             animation: float 10s ease-in-out infinite;
         }
 
