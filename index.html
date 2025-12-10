@@ -152,95 +152,55 @@
         /* SOBRE */
         #sobre {
             background: var(--branco);
-            padding: 0;
-            position: relative;
+            padding: 3rem 2rem;
         }
 
-        .transition-lines {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            height: 100%;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--azul-escuro) 0px,
-                var(--azul-escuro) 2px,
-                transparent 2px,
-                transparent 20px
-            );
-            opacity: 0.15;
-            position: absolute;
-            top: 0;
-            z-index: 0;
-        }
-
-        .about-main {
-            padding: 5rem 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-content-box {
-            background: rgba(245, 245, 245, 0.95);
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            max-width: 100%;
-        }
-
-        .about-content-inner {
-            max-width: 1400px;
+        .sobre-container {
+            max-width: 700px;
             margin: 0 auto;
-            display: contents;
         }
 
-        .about-title {
+        .sobre-title {
             font-family: 'Metropolis', 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: var(--preto);
+            font-size: 1.6rem;
+            color: #24456D;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
+            line-height: 1.2;
         }
 
-        .about-text p {
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+        .sobre-text p {
+            font-size: 0.95rem;
             line-height: 1.6;
-            color: var(--preto);
+            color: var(--cinza);
+            margin-bottom: 1rem;
         }
 
-        .about-text p:last-of-type {
+        .sobre-text p:last-of-type {
             margin-bottom: 1.5rem;
         }
 
-        .about-link {
-            text-align: center;
-            margin-top: 1.5rem;
+        .sobre-link {
+            display: inline-block;
         }
 
-        .about-link a {
-            color: var(--preto);
+        .sobre-link a {
+            color: var(--cinza-dark);
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--preto);
+            border-bottom: 2px solid var(--cinza-dark);
             transition: all 0.3s;
             padding-bottom: 3px;
-            display: inline-block;
             text-transform: uppercase;
         }
 
-        .about-link a:hover {
-            color: var(--azul);
-            border-bottom-color: var(--azul);
+        .sobre-link a:hover {
+            color: #24456D;
+            border-bottom-color: #24456D;
         }
 
         .about-image-wrapper {
@@ -631,24 +591,14 @@
 
     <!-- SOBRE -->
     <section id="sobre">
-        <div class="transition-lines"></div>
-        <div class="about-main">
-            <div class="about-content-box">
-                <div class="about-content-inner">
-                    <h2 class="about-title">Ponte Sonora Que Une Gerações</h2>
-                    <div class="about-text">
-                        <p>A Orquestra Sanfônica de Pato Branco é um projeto musical composto principalmente por acordeonistas que promove a valorização da música tradicional brasileira, especialmente a música sulamericana.</p>
-                        <p>Fundada em 2006, a orquestra reúne músicos de várias idades, oferecendo um espaço para o desenvolvimento de talentos locais e para a preservação do acordeon, instrumento central na cultura musical do sul do Brasil.</p>
-                    </div>
-                    <div class="about-link">
-                        <a href="/sobre.html">Saiba Mais Sobre a OSPB</a>
-                    </div>
-                </div>
+        <div class="sobre-container">
+            <h2 class="sobre-title">Ponte Sonora Que Une Gerações</h2>
+            <div class="sobre-text">
+                <p>A Orquestra Sanfônica de Pato Branco é um projeto musical composto principalmente por acordeonistas que promove a valorização da música tradicional brasileira, especialmente a música sulamericana.</p>
+                <p>Fundada em 2006, a orquestra reúne músicos de várias idades, oferecendo um espaço para o desenvolvimento de talentos locais e para a preservação do acordeon, instrumento central na cultura musical do sul do Brasil.</p>
             </div>
-            <div class="about-image-wrapper">
-                <div class="about-image">
-                    <img src="sobre.jpg" alt="Orquestra Sanfônica de Pato Branco">
-                </div>
+            <div class="sobre-link">
+                <a href="/sobre.html">Saiba Mais Sobre a OSPB</a>
             </div>
         </div>
     </section>
