@@ -76,30 +76,15 @@
 
         /* HERO */
         .hero {
-            min-height: 100vh;
+            min-height: 70vh;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(55, 100, 165, 0.65) 100%), 
-                        url('foto-fundo-ospb.jpg') center/cover no-repeat fixed;
+                        url('foto-fundo-ospb.jpg') center 30%/cover no-repeat fixed;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            padding-top: 4rem;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(188, 157, 139, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 5;
-            animation: float 10s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(40px); }
         }
 
         .hero-content {
@@ -109,10 +94,25 @@
         }
 
         .logo-hero {
-            max-width: 550px;
+            max-width: 500px;
             width: 100%;
             height: auto;
             filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+            position: relative;
+            z-index: 11;
+        }
+
+        .logo-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(188, 157, 139, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
         }
 
         /* SEÇÕES */
@@ -537,7 +537,7 @@
     <!-- HEADER -->
     <header>
         <nav>
-            <img src="logo-cabecalho.png" alt="Logo OSPB" class="logo-header">
+            <img src="logo-head.png" alt="Logo OSPB" class="logo-header">
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#eventos">Eventos</a></li>
@@ -656,7 +656,7 @@
     <!-- FOOTER -->
     <footer id="contato">
         <div class="footer-grid">
-            <img src="logo-cabecalho.png" alt="Logo OSPB" class="footer-logo">
+            <img src="logo-foot.png" alt="Logo OSPB" class="footer-logo">
             <div class="footer-info">
                 <div class="footer-section">
                     <h4>Contato</h4>
