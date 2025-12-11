@@ -4,47 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orquestra Sanfônica de Pato Branco - Em Manutenção</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Metropolis';
+            src: url('./fonts/Metropolis-Bold.otf') format('opentype');
+            font-weight: 700;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             background: #16243D;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            font-family: 'Montserrat', Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
             padding: 2rem;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+
+        .container {
+            text-align: center;
+            max-width: 600px;
         }
+
+        .logo {
+            margin-bottom: 3rem;
+        }
+
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        h1 {
+            font-family: 'Metropolis', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
         p {
             font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
+
         .emoji {
             font-size: 3rem;
             margin-bottom: 1rem;
+        }
+
+        .contact {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-email {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #BC9D8B;
+        }
+
+        .contact-email a {
+            color: #BC9D8B;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-email a:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="logo">
+            <img src="logo-head.png" alt="Logo OSPB">
+        </div>
         <div class="emoji">🎵</div>
         <h1>Em Manutenção</h1>
-        <p>Estamos atualizando nosso site.</p>
         <p>Volte em breve!</p>
+        
+        <div class="contact">
+            <div class="contact-label">Contato</div>
+            <div class="contact-email">
+                <a href="mailto:contato@ospb.com.br">contato@ospb.com.br</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
