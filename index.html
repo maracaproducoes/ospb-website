@@ -391,9 +391,9 @@
 
         .redes-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 2rem;
-            align-items: stretch;
+            align-items: start;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -438,16 +438,33 @@
             border: none;
         }
 
-        /* SPOTIFY */
-        #spotify {
-            background: var(--cinza-claro);
-        }
-
-        .spotify-container {
-            text-align: center;
+        .spotify-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .spotify-player {
+            width: 100%;
+        }
+
+        .spotify-player iframe {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .spotify-link {
+            text-align: center;
+            color: #0A121C;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .spotify-link:hover {
+            color: #3764A5;
+        }
             display: flex;
             justify-content: center;
             margin: 2rem 0;
@@ -727,22 +744,18 @@
                 </div>
             </div>
 
+            <div class="spotify-section">
+                <div class="spotify-player">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/217z1iahZaFjd3gYnHTLUh?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <a href="https://open.spotify.com/intl-pt/artist/4FO1il1njUkN1WcUhMZ1cO" target="_blank" class="spotify-link">Ver Todos os Álbuns</a>
+            </div>
+
             <div class="yt-section">
                 <div class="youtube-player">
                     <iframe src="https://www.youtube.com/embed/VVKEdO9_Bes?start=14" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- SPOTIFY -->
-    <section id="spotify">
-        <h2 class="section-title">Ouça Agora</h2>
-        <div class="spotify-container">
-            <div class="spotify-player">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/217z1iahZaFjd3gYnHTLUh?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <a href="https://open.spotify.com/intl-pt/artist/4FO1il1njUkN1WcUhMZ1cO" target="_blank" class="spotify-link">Ver Todos os Álbuns</a>
         </div>
     </section>
 
