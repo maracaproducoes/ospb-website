@@ -8,8 +8,8 @@
     <style>
         @font-face {
             font-family: 'Metropolis';
-            src: url('./fonts/Metropolis-Bold.otf') format('opentype');
-            font-weight: 700;
+            src: url('./fonts/Metropolis-Regular.otf') format('opentype');
+            font-weight: 400;
         }
 
         * {
@@ -31,46 +31,63 @@
 
         .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 500px;
         }
 
         .logo {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .container {
-            text-align: center;
-            max-width: 600px;
+        .logo img {
+            max-width: 60px;
+            height: auto;
         }
 
-        .logo {
-            margin-bottom: 3rem;
+        h1 {
+            font-family: 'Metropolis', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.95;
+        }
+
+        p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         .contact {
-            margin-top: 3rem;
-            padding-top: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
+            font-weight: 500;
         }
 
         .contact-email {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #BC9D8B;
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
         }
 
         .contact-email a {
-            color: #BC9D8B;
+            color: white;
             text-decoration: none;
             transition: all 0.3s;
+            border-bottom: 1px solid white;
+            padding-bottom: 2px;
         }
 
         .contact-email a:hover {
@@ -81,10 +98,10 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="logo-head.png" alt="Logo OSPB">
+            <img src="logo-hero.png" alt="Logo OSPB">
         </div>
         <h1>Em Manutenção</h1>
-        <p>Volte em breve!</p>
+        <p>Estamos atualizando nosso site, volte em breve.</p>
         
         <div class="contact">
             <div class="contact-label">Contato</div>
