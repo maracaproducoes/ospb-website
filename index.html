@@ -260,17 +260,20 @@
 
         .event-image {
             width: 100%;
-            height: 240px;
+            height: 200px;
             border-radius: 4px;
             overflow: hidden;
             background: var(--branco);
             border: 3px solid var(--branco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .event-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .event-content {
@@ -541,14 +544,14 @@
         }
 
         .footer-right a {
-            color: var(--bege);
+            color: var(--cinza);
             text-decoration: none;
             transition: color 0.3s;
             font-size: 0.9rem;
         }
 
         .footer-right a:hover {
-            color: var(--branco);
+            color: var(--bege);
         }
 
         .footer-bottom {
