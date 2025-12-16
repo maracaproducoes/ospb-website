@@ -135,32 +135,6 @@
             z-index: -1;
         }
 
-        /* BOLINHAS DO FOLE */
-        .fole-dots {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            z-index: 5;
-        }
-
-        .fole-dots-row {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .fole-dot {
-            width: 8px;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            transition: opacity 0.3s;
-        }
-
-        .fole-dot:hover {
-            opacity: 1;
-        }
-
         /* SEÇÕES */
         section {
             padding: 5rem 2rem;
@@ -180,25 +154,10 @@
             text-align: center;
         }
 
-        .sobre-title {
-            font-family: 'Metropolis', 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            color: #0A121C;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-
         .sobre-text p {
             font-size: 0.9rem;
             line-height: 1.5;
             color: var(--cinza-dark);
-            margin-bottom: 0.8rem;
-        }
-
-        .sobre-text p:last-of-type {
             margin-bottom: 1.2rem;
         }
 
@@ -221,28 +180,6 @@
         .sobre-link a:hover {
             color: #24456D;
             border-bottom-color: #24456D;
-        }
-
-        .about-image-wrapper {
-            padding: 4rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--branco);
-        }
-
-        .about-image {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
         }
 
         /* EVENTOS */
@@ -275,20 +212,9 @@
             margin-top: 0;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: var(--branco);
-            font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 2rem;
-            text-align: left;
-            display: none;
-        }
-
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -421,27 +347,6 @@
             height: 100%;
         }
 
-        .yt-section {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            height: 600px;
-        }
-
-        .youtube-player {
-            width: 100%;
-            height: 100%;
-            border-radius: 6px;
-            overflow: hidden;
-            flex: 1;
-        }
-
-        .youtube-player iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         .spotify-section {
             display: flex;
             flex-direction: column;
@@ -458,49 +363,6 @@
             width: 100%;
             height: 100%;
             border-radius: 12px;
-        }
-
-        .spotify-link {
-            text-align: center;
-            color: #0A121C;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-
-        .spotify-link:hover {
-            color: #3764A5;
-        }
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .spotify-player iframe {
-            border-radius: 8px;
-        }
-
-        .spotify-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.8rem 2rem;
-            background: var(--azul);
-            color: var(--branco);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .spotify-link:hover {
-            background: var(--bege);
-            color: var(--preto);
         }
 
         /* PATROCÍNIO */
@@ -537,18 +399,6 @@
             max-width: 100%;
             margin: 0;
             text-align: center;
-        }
-
-        .sponsorship-content h3 {
-            color: var(--branco);
-            font-family: 'Metropolis', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: none;
         }
 
         .sponsorship-content p {
@@ -622,10 +472,16 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             margin-bottom: 2rem;
             align-items: start;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
         }
 
         .footer-logo {
@@ -633,35 +489,44 @@
             width: auto;
         }
 
-        .footer-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+        .footer-center {
+            text-align: center;
         }
 
-        .footer-section h4 {
-            color: var(--bege);
-            margin-bottom: 1rem;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .footer-center h4 {
+            color: var(--cinza);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
-        .footer-section p {
+        .footer-center p {
             color: var(--cinza);
             font-size: 0.9rem;
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
+            line-height: 1.6;
         }
 
-        .footer-section a {
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-right h4 {
+            color: var(--cinza);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-right a {
             color: var(--bege);
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.9rem;
         }
 
-        .footer-section a:hover {
+        .footer-right a:hover {
             color: var(--branco);
         }
 
@@ -675,24 +540,25 @@
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .about-grid, .redes-container, .sponsorship-box {
+            .events-grid {
                 grid-template-columns: 1fr;
             }
 
-            .events-grid {
+            .redes-container {
                 grid-template-columns: 1fr;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .footer-info {
-                grid-template-columns: 1fr;
+            .footer-logo-section {
+                justify-content: center;
+            }
+
+            .footer-right {
+                text-align: center;
             }
 
             .nav-links {
@@ -712,11 +578,12 @@
         <nav>
             <img src="logo-head.png" alt="Logo OSPB" class="logo-header">
             <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-                <li><a href="#redes">Redes</a></li>
-                <li><a href="#patrocinio">Patrocínio</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="ospb-sobre.html">Sobre</a></li>
+                <li><a href="discografia.html">Discografia</a></li>
+                <li><a href="concertos.html">Concertos</a></li>
+                <li><a href="apoio.html">Apoio</a></li>
+                <li><a href="imprensa.html">Imprensa</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -731,13 +598,11 @@
     <!-- SOBRE -->
     <section id="sobre">
         <div class="sobre-container">
-            <h2 class="sobre-title">Ponte Sonora Que Une Gerações</h2>
             <div class="sobre-text">
-                <p>A Orquestra Sanfônica de Pato Branco é um projeto musical composto principalmente por acordeonistas que promove a valorização da música tradicional brasileira, especialmente a música sulamericana.</p>
-                <p>Fundada em 2006, a orquestra reúne músicos de várias idades, oferecendo um espaço para o desenvolvimento de talentos locais e para a preservação do acordeon, instrumento central na cultura musical do sul do Brasil.</p>
+                <p>A Orquestra Sanfônica de Pato Branco promove, desde 2006, a valorização da música brasileira e latino-americana. Integra músicos de diversas gerações e explora a diversidade sonora do acordeon no Brasil, incorporando influências de norte a sul do país, da cultura regional e de fronteira, oferecendo um espaço para o desenvolvimento de talentos locais e a preservação das múltiplas identidades musicais do Brasil.</p>
             </div>
             <div class="sobre-link">
-                <a href="/ospb-sobre.html">Saiba Mais Sobre a OSPB</a>
+                <a href="ospb-sobre.html">Saiba Mais</a>
             </div>
         </div>
     </section>
@@ -751,32 +616,22 @@
             <div class="events-grid">
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="sobre.jpg" alt="Evento">
+                        <img src="card-producao2.jpg" alt="SESI Música 2025">
                     </div>
                     <div class="event-content">
-                        <h3 class="event-title">Festival 2024</h3>
-                        <p class="event-text">Uma noite inesquecível com a melhor música tradicional brasileira.</p>
-                        <a href="#" class="btn-link">Saiba Mais</a>
+                        <h3 class="event-title">SESI Música 2025: Orquestra Sanfônica convida Marcelo Jeneci</h3>
+                        <p class="event-text">Um encontro especial entre a tradição do acordeon e a música popular brasileira contemporânea. A OSPB recebe o premiado cantor e compositor paulista para uma noite única de música e emoção no circuito SESI de cultura.</p>
+                        <a href="concertos.html" class="btn-link">Saiba Mais</a>
                     </div>
                 </div>
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="sobre.jpg" alt="Evento">
+                        <img src="card-producao1.jpg" alt="Música para o Povo">
                     </div>
                     <div class="event-content">
-                        <h3 class="event-title">Concerto Especial</h3>
-                        <p class="event-text">Repertório diversificado para toda a família com clássicos brasileiros.</p>
-                        <a href="#" class="btn-link">Saiba Mais</a>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="sobre.jpg" alt="Evento">
-                    </div>
-                    <div class="event-content">
-                        <h3 class="event-title">Apresentação</h3>
-                        <p class="event-text">Mergulhe na cultura musical sulamericana com a OSPB.</p>
-                        <a href="#" class="btn-link">Saiba Mais</a>
+                        <h3 class="event-title">Música para o Povo</h3>
+                        <p class="event-text">Turnê comemorativa dos 15 anos da OSPB que leva música de qualidade para toda a comunidade. Apresentações gratuitas em praças, escolas e espaços públicos, democratizando o acesso à cultura e celebrando a trajetória da orquestra.</p>
+                        <a href="concertos.html" class="btn-link">Saiba Mais</a>
                     </div>
                 </div>
             </div>
@@ -807,7 +662,7 @@
         <div class="sponsorship-box">
             <div class="sponsorship-content">
                 <p>Sua contribuição ajuda a manter viva a tradição da música brasileira e apoiar novos talentos.</p>
-                <a href="#" class="btn-sponsor">Saiba Mais</a>
+                <a href="apoio.html" class="btn-sponsor">Saiba Mais</a>
             </div>
             <div class="sponsor-logos">
                 <div class="sponsor-item">
@@ -820,26 +675,20 @@
     <!-- FOOTER -->
     <footer id="contato">
         <div class="footer-grid">
-            <img src="logo-foot.png" alt="Logo OSPB" class="footer-logo">
-            <div class="footer-info">
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <p><a href="mailto:contato@ospb.com.br">contato@ospb.com.br</a></p>
-                    <p><a href="tel:+554699829264">(46) 99982-9264</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>Localização</h4>
-                    <p>Rua Guarani, 954<br>Centro - Pato Branco/PR</p>
-                </div>
-                <div class="footer-section">
-                    <h4>CNPJ</h4>
-                    <p>12.547.283/0001-75</p>
-                </div>
+            <div class="footer-logo-section">
+                <img src="logo-foot.png" alt="Logo OSPB" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <h4>ORQUESTRA SANFÔNICA DE PATO BRANCO</h4>
+                <p>12.547.283/0001-75</p>
+            </div>
+            <div class="footer-right">
+                <h4>Shows, parcerias e informações:</h4>
+                <a href="mailto:contato@ospb.com.br">contato@ospb.com.br</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Orquestra Sanfônica de Pato Branco. Todos os direitos reservados.</p>
-            <p>Levando a música e cultura à comunidade desde 2006</p>
+            <p>© 2025 Orquestra Sanfônica de Pato Branco. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
