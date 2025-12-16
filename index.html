@@ -418,15 +418,19 @@
 
         .sponsorship-box {
             display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            flex-direction: row;
+            gap: 3rem;
             align-items: center;
             background: #16243D;
             padding: 3rem 2rem;
             border-radius: 0;
             max-width: 100%;
             margin: 0;
-            text-align: center;
+        }
+
+        .sponsorship-content {
+            flex: 1;
+            text-align: left;
         }
 
         .sponsorship-content p {
@@ -434,7 +438,6 @@
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
-            order: 2;
         }
 
         .btn-sponsor {
@@ -451,7 +454,6 @@
             letter-spacing: 0.5px;
             border-bottom: 1px solid var(--branco);
             padding-bottom: 2px;
-            order: 3;
         }
 
         .btn-sponsor:hover {
@@ -464,9 +466,8 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            width: 100%;
-            max-width: 400px;
-            order: 1;
+            width: 400px;
+            min-width: 400px;
         }
 
         .sponsor-item {
@@ -575,6 +576,20 @@
 
             .redes-container {
                 grid-template-columns: 1fr;
+            }
+
+            .sponsorship-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sponsorship-content {
+                text-align: center;
+            }
+
+            .sponsor-logos {
+                width: 100%;
+                max-width: 350px;
             }
 
             .footer-grid {
@@ -692,14 +707,14 @@
     <section id="patrocinio">
         <h2 class="section-title">Apoie a OSPB</h2>
         <div class="sponsorship-box">
-            <div class="sponsorship-content">
-                <p>Sua contribuição ajuda a manter viva a tradição da música brasileira e apoiar novos talentos.</p>
-                <a href="apoio.html" class="btn-sponsor">Saiba Mais</a>
-            </div>
             <div class="sponsor-logos">
                 <div class="sponsor-item">
                     <img src="sobre.jpg" alt="Orquestra Sanfônica de Pato Branco">
                 </div>
+            </div>
+            <div class="sponsorship-content">
+                <p>Sua contribuição ajuda a manter viva a tradição da música brasileira e apoiar novos talentos.</p>
+                <a href="apoio.html" class="btn-sponsor">Saiba Mais</a>
             </div>
         </div>
     </section>
