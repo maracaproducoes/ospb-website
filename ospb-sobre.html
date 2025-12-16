@@ -39,7 +39,7 @@
             position: relative;
             height: 60vh;
             min-height: 500px;
-            background: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1920') center/cover no-repeat;
+            background: url('sobre.jpg') center/cover no-repeat;
             display: flex;
             align-items: flex-end;
             padding: 0 5%;
@@ -52,8 +52,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            height: 35%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
             pointer-events: none;
         }
 
@@ -62,11 +62,13 @@
             z-index: 2;
             color: white;
             font-family: 'Metropolis', 'Montserrat', sans-serif;
-            font-size: clamp(32px, 5vw, 64px);
+            font-size: clamp(24px, 3.5vw, 48px);
             font-weight: 700;
-            line-height: 1.2;
-            max-width: 800px;
+            line-height: 1.3;
+            max-width: 900px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
         /* SEÇÃO DOS PILARES */
@@ -88,15 +90,29 @@
         }
 
         .pillar-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
+            width: 60px;
+            height: 20px;
+            margin: 0 auto 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
         }
 
-        .pillar-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .pillar-icon::before,
+        .pillar-icon::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #BC9D8B;
+            border-radius: 50%;
+        }
+
+        .pillar-dot {
+            width: 8px;
+            height: 8px;
+            background: #BC9D8B;
+            border-radius: 50%;
         }
 
         .pillar-title {
@@ -129,7 +145,8 @@
             }
 
             .hero-title {
-                font-size: 32px;
+                font-size: 20px;
+                letter-spacing: 1px;
             }
 
             .pillars-section {
@@ -141,8 +158,16 @@
             }
 
             .pillar-icon {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 16px;
+                gap: 6px;
+            }
+
+            .pillar-icon::before,
+            .pillar-icon::after,
+            .pillar-dot {
+                width: 6px;
+                height: 6px;
             }
 
             .pillar-title {
@@ -160,10 +185,7 @@
     <!-- SEÇÃO HERO COM FOTO -->
     <section class="hero-photo">
         <h1 class="hero-title">
-            Há 20 anos, fazemos<br>
-            o acordeon do Sudoeste<br>
-            do Paraná ecoar<br>
-            pelo mundo
+            Há 20 anos, fazemos o acordeon do Sudoeste do Paraná ecoar pelo mundo
         </h1>
     </section>
 
@@ -174,7 +196,7 @@
             <!-- PILAR 1: SEMEAMOS -->
             <div class="pillar">
                 <div class="pillar-icon">
-                    <img src="icone1.jpg" alt="Ícone Semeamos">
+                    <div class="pillar-dot"></div>
                 </div>
                 <h2 class="pillar-title">Semeamos</h2>
                 <div class="pillar-text">
@@ -186,7 +208,7 @@
             <!-- PILAR 2: VOAMOS -->
             <div class="pillar">
                 <div class="pillar-icon">
-                    <img src="icone2.jpg" alt="Ícone Voamos">
+                    <div class="pillar-dot"></div>
                 </div>
                 <h2 class="pillar-title">Voamos</h2>
                 <div class="pillar-text">
@@ -198,7 +220,7 @@
             <!-- PILAR 3: CONECTAMOS -->
             <div class="pillar">
                 <div class="pillar-icon">
-                    <img src="icone3.jpg" alt="Ícone Conectamos">
+                    <div class="pillar-dot"></div>
                 </div>
                 <h2 class="pillar-title">Conectamos</h2>
                 <div class="pillar-text">
